@@ -17,7 +17,7 @@ class BooksController extends Controller
         $book->update( $this->validateRequest() );
         return redirect($book->path());
     }
-    
+
     public function destroy(Book $book)
     {
         $book->delete();
@@ -29,7 +29,7 @@ class BooksController extends Controller
     {
         return request() -> validate([
             'title'=>'required',
-            'author'=>'required'
+            'author_id'=>'required'
         ]);
     }
 
